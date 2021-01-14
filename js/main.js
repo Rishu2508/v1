@@ -39,7 +39,7 @@ AOS.init({
 	burgerMenu();
 
 	var onePageClick= () => {
-		$(document).on('click','#ftco-nav a[href^="#"],.ftco-footer-widget a[href^="#"]',function(event){
+		$(document).on('click','#ftco-nav a[href^="#"],.ftco-footer-widget a[href^="#"],.ftco-hireme a[href="#Ask_question"],.gototop',function(event){
 			event.preventDefault();
 			var href=$.attr(this,'href');
 			$('html, body').animate({
@@ -93,24 +93,30 @@ AOS.init({
 					navbar.addClass('scrolled');
 					nav_brand.toggleClass('text-shadow-orange');
 					nav_brand.toggleClass('text-shadow-blue');
-			}} if(st<150) {
+			}}
+			if(st<150) {
 				if(navbar.hasClass('scrolled')){
 					navbar.removeClass('scrolled sleep');
 					nav_brand.toggleClass('text-shadow-orange');
 					nav_brand.toggleClass('text-shadow-blue');
-				}} if(st>580){
-					if(!navbar.hasClass('awake')){
-						navbar.addClass('awake');
+			}}
+			if(st>580){
+				$('.js-top').addClass('active');
+				if(!navbar.hasClass('awake')){
+					navbar.addClass('awake');
 				} if(sd.length>0){
-					sd.addClass('sleep');
-				}} if(st<540){
-					if(navbar.hasClass('awake')){
-						navbar.removeClass('awake');
-						navbar.addClass('sleep');
-					} if(sd.length>0){
-						sd.removeClass('sleep');
-					}
-				} if(st >= 6300 && i==0 ) {
+				sd.addClass('sleep');
+			}}
+			if(st<540){
+				$('.js-top').removeClass('active');
+				if(navbar.hasClass('awake')){
+					navbar.removeClass('awake');
+					navbar.addClass('sleep');
+				} if(sd.length>0){
+					sd.removeClass('sleep');
+				}
+			}
+			if(st >= 7800 && i==0 ) {
 					console.log('here > '+st)
 					i++;
 					startTyping();
