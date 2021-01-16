@@ -116,7 +116,7 @@ AOS.init({
 					sd.removeClass('sleep');
 				}
 			}
-			if(st >= 4750 && i==0 ) {
+			if(st >= 6000 && i==0 ) {
 					console.log('here > '+st)
 					i++;
 					startTyping();
