@@ -39,7 +39,7 @@ AOS.init({
 	burgerMenu();
 
 	var onePageClick= () => {
-		$(document).on('click','#ftco-nav a[href^="#"],.ftco-footer-widget a[href^="#"],.ftco-hireme a[href="#Ask_question"],.gototop',function(event){
+		$(document).on('click','#ftco-nav a[href^="#"],.ftco-footer-widget a[href^="#"],.ftco-hireme a[href="#Ask_question"],a[href="#social-links"].gototop',function(event){
 			event.preventDefault();
 			var href=$.attr(this,'href');
 			$('html, body').animate({
