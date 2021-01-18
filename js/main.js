@@ -169,7 +169,6 @@ AOS.init({
 
 	var goHere=function(){
 		$('.mouse-icon').on('click',function(event){
-			console.log();
 			event.preventDefault();
 			if(window.screen.availWidth < 680)
 			{
