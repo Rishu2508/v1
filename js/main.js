@@ -183,10 +183,20 @@ AOS.init({
 		var goHere=function(){
 		$('.mouse-icon').on('click',function(event){
 			event.preventDefault();
-			$('html,body').animate({
-				scrollTop:$('.goto-here').offset().top
-			},500,'easeInOutExpo');
-			return false;
+			if(window.screen.availWidth < 680)
+			{
+				$('html,body').animate({
+					scrollTop:$('.goto-here').offset().top+100
+				},400,'easeInOutExpo');
+				return false;
+			} else {
+				$('html,body').animate({
+					scrollTop:$('.goto-here').offset().top
+				},400,'easeInOutExpo');
+				return false;
+			}
+			
+		});
 		});
 	};
 	goHere();
