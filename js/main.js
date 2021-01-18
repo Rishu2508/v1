@@ -43,7 +43,7 @@ AOS.init({
 			event.preventDefault();
 			var href=$.attr(this,'href');
 			$('html, body').animate({
-				scrollTop: $($.attr(this,'href')).offset().top-30},500,function(){});
+				scrollTop: $($.attr(this,'href')).offset().top},500,function(){});
 		});
 	};
 	onePageClick();
@@ -75,7 +75,7 @@ AOS.init({
 	var j=0,p = $('#demo');
 	var map = "";
 	function startTyping() {
-	  var txt = 'I can develop, design, build any project using HTML, css, JS, Node JS, java, .net and last but not Least visual basic';
+	  var txt = 'I can develop, design, build projects using HTML, css, JS, Node JS, java, .net and last but not Least visual basic';
 	  if (j < txt.length) {
 	    map = map + txt.charAt(j);
 	    p.text(`${map}`);
@@ -93,30 +93,26 @@ AOS.init({
 					navbar.addClass('scrolled');
 					nav_brand.toggleClass('text-shadow-orange');
 					nav_brand.toggleClass('text-shadow-blue');
-			}}
-			if(st<150) {
+			}} if(st<150) {
 				if(navbar.hasClass('scrolled')){
 					navbar.removeClass('scrolled sleep');
 					nav_brand.toggleClass('text-shadow-orange');
 					nav_brand.toggleClass('text-shadow-blue');
-			}}
-			if(st>580){
-				$('.js-top').addClass('active');
-				if(!navbar.hasClass('awake')){
-					navbar.addClass('awake');
+				}} if(st>580){
+					$('.js-top').addClass('active');
+					if(!navbar.hasClass('awake')){
+						navbar.addClass('awake');
 				} if(sd.length>0){
-				sd.addClass('sleep');
-			}}
-			if(st<540){
-				$('.js-top').removeClass('active');
-				if(navbar.hasClass('awake')){
-					navbar.removeClass('awake');
-					navbar.addClass('sleep');
-				} if(sd.length>0){
-					sd.removeClass('sleep');
-				}
-			}
-			if(st >= 6000 && i==0 ) {
+					sd.addClass('sleep');
+				}} if(st<540){
+					if(navbar.hasClass('awake')){
+						$('.js-top').removeClass('active');
+						navbar.removeClass('awake');
+						navbar.addClass('sleep');
+					} if(sd.length>0){
+						sd.removeClass('sleep');
+					}
+				} if(st >= 6000 && i==0 ) {
 					console.log('here > '+st)
 					i++;
 					startTyping();
@@ -171,17 +167,9 @@ AOS.init({
 
 	setTimeout(contentWayPoint,2290);
 
-	$('.image-popup').magnificPopup({
-		type:'image',closeOnContentClick:true,closeBtnInside:false,fixedContentPos:true,mainClass:'mfp-no-margins mfp-with-zoom',
-		gallery:{enabled:true,navigateByImgClick:true,preload:[0,1]},image:{verticalFit:true},zoom:{enabled:true,duration:300}
-	});
-
-	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-		disableOn:700,type:'iframe',mainClass:'mfp-fade',removalDelay:160,preloader:false,fixedContentPos:false
-	});
-
-		var goHere=function(){
+	var goHere=function(){
 		$('.mouse-icon').on('click',function(event){
+			console.log();
 			event.preventDefault();
 			if(window.screen.availWidth < 680)
 			{
@@ -196,7 +184,6 @@ AOS.init({
 				return false;
 			}
 			
-		});
 		});
 	};
 	goHere();
