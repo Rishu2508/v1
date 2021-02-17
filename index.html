@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<div class="mouse">
-			<a href="#" class="mouse-icon">
+			<a href="" class="mouse-icon">
 				<div class="mouse-wheel">
 					<i class="ion-ios-arrow-down" style="filter: drop-shadow(0px 6px 2px #0009);"></i>
 				</div>
@@ -65,7 +65,7 @@
 	<section class="ftco-about img ftco-section pt-4 ftco-no-pb goto-here" id="about-section">
 		<div class="container">
 			<div class="row d-flex no-gutters">
-				<div class="col-md-6 col-lg-5 pl-md-2 my-5 d-flex">
+				<div class="col-md-6 col-lg-5 pl-md-2 my-5 d-flex ftco-animate">
 					<div class="img-about img d-flex align-items-stretch">
 						<div class="overlay"></div>
 						<div class="img d-flex align-self-stretch align-items-center" style="background:linear-gradient(transparent 80%,#2229 ),url(images/me.jpg);background-size: cover;background-position: center center;"></div>
@@ -76,7 +76,7 @@
 						<div class="col-md-12 heading-section ftco-animate">
 							<h1 class="big">About</h1>
 							<h2 class="mb-4">About Me</h2>
-							<div class="d-md-none about-img row" style="justify-content: center;">
+							<div class="d-md-none about-img d-flex" style="justify-content: center;">
 							    <div class="about-img-small" style="background: url('images/profile picture.jpg');background-size: cover;border: 5px white solid;box-shadow: 0 0 20px #797676;"></div>
 							</div>
 							<ul class="about-info mt-4 px-md-0">
@@ -95,7 +95,7 @@
 							<span class="number" data-limit="80">0</span>
 							<span>Project complete</span>
 							</p>
-							<p><a href="https://drive.google.com/file/d/1CD6KdqM8ePCVOWvb0XJ0PoVp4A4hasnD/view?usp=drivesdk" class="btn btn-primary py-3 px-3">View Resume</a></p>
+							<p><a href="E:\Dell\Documents\resume.pdf" class="btn btn-primary py-3 px-3">View Resume</a></p>
  						</div>
 					</div>
 				</div>
@@ -612,17 +612,19 @@
 			</div>
 			<div class="row no-gutters block-9 ftco-animate" id="Ask_question">
 				<div class="col-md-6 order-md-last d-flex">
-					<form action="https://submit-form.com/okAQvTHN" class="bg-light p-4 p-md-5 contact-form">
+					<form action="https://submit-form.com/okAQvTHN" name="send-Email" class="bg-light p-4 p-md-5 contact-form">
 						<h2 class="cc_cursor" style="font-weight: 700;">Mail Me</h2>
-						<input type="hidden" name="_redirect" value="https://rishu2508.github.io/Rishu-Sagar/Form%20submitted.html"/>
+						<input type="hidden" name="_redirect" value="./Form submitted.html"/>
+						<input type="hidden" name="_feedback.success.title" value="Your e-mail has been sent!"/>
+						<input type="hidden" name="_feedback.success.message" value="Thanks for making a contact." />
 						<div class="form-group">
-							<input type="text" name="_email.from" class="form-control" placeholder="Your Name" required>
+							<input type="text" name="Name" class="form-control" placeholder="Your Name" required>
 						</div>
 						<div class="form-group">
 							<input type="email" name="From" class="form-control" placeholder="Your Email" required>
 						</div>
 						<div class="form-group">
-							<input type="text" name="_email.subject" class="form-control" placeholder="Subject" required>
+							<input type="text" name="Subject" class="form-control" placeholder="Subject" required>
 						</div>
 						<div class="form-group">
 							<textarea name="Body" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
@@ -654,7 +656,7 @@
 						</ul>
 					</div>
 				</div>
-			<div class="col-md">
+			<div class="col-md footer-links">
 				<div class="ftco-footer-widget mb-4 ml-md-4">
 					<h2 class="ftco-heading-2">Links</h2>
 					<ul class="list-unstyled">
@@ -666,7 +668,7 @@
 					</ul>
 				</div>
 			</div>
-			<div class="col-md">
+			<div class="col-md footer-services">
 				<div class="ftco-footer-widget mb-4">
 					<h2 class="ftco-heading-2">Services</h2>
 					<ul class="list-unstyled">
