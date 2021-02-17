@@ -20,7 +20,7 @@
     color: white;
     transform: translate(-50%, 50px);
     text-align: center;
-    filter: drop-shadow(0px 6px 4px #666);
+    filter: drop-shadow(2px 5px 2.5px #999);
 	/*transition: 1s;*/
 }
 .icons.web::before{
@@ -133,6 +133,9 @@
         float: right !important;
         line-height: 1.35rem !important;
     }
+    .icons::after {
+	left: 205px !important;
+	}
     .ftco-hireme .overlay {
         width: calc(100% - 60px) !important;
     }
