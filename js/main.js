@@ -44,6 +44,9 @@ AOS.init({
 			var href=$.attr(this,'href');
 			$('html, body').animate({
 				scrollTop: $($.attr(this,'href')).offset().top},500,function(){});
+			if($('#ftco-nav').hasClass('show')){
+				$('#ftco-nav').removeClass('show');
+			}
 		});
 	};
 	onePageClick();
