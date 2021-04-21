@@ -30,8 +30,10 @@ AOS.init({
 			event.preventDefault();
 			if($('#ftco-nav').is(':visible')){
 				$(this).removeClass('active');
+				$('.bars').removeClass('hide');
 			}else{
 				$(this).addClass('active');
+				$('.bars').addClass('hide');
 			}
 		});
 	};
