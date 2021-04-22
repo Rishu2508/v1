@@ -43,6 +43,7 @@ AOS.init({
 		$(document).on('click','#ftco-nav a[href^="#"],.ftco-footer-widget a[href^="#"],.ftco-hireme a[href="#Ask_question"],a[href="#social-links"],.gototop',function(event){
 			event.preventDefault();
 			var href=$.attr(this,'href');
+			$('.bars').removeClass('hide');
 			$('html, body').animate({
 				scrollTop: $($.attr(this,'href')).offset().top},500,function(){});
 			if($('#ftco-nav').hasClass('show')){
@@ -226,7 +227,7 @@ AOS.init({
 				} else {
 					console.log('Portrait');
 					$('html,body').animate({
-						scrollTop:$('.goto-here').offset().top+100
+						scrollTop:$('.goto-here').offset().top
 						},400,'easeInOutExpo');
 					return false;
 				}
