@@ -106,7 +106,7 @@
 					nav_brand.toggleClass('text-shadow-blue');
 				}
 			}
-			if(st > $('.ftco-about').offset().top - 50){
+			if(st > $('.ftco-about').offset().top - 100){
 				$('.js-top').addClass('active');
 				if(!navbar.hasClass('awake')){
 					navbar.addClass('awake');
@@ -115,7 +115,7 @@
 					sd.addClass('sleep');
 				}
 			}
-			if(st< $('.ftco-about').offset().top - 50){
+			if(st< $('.ftco-about').offset().top - 100){
 				if(navbar.hasClass('awake')){
 					$('.js-top').removeClass('active');
 					navbar.removeClass('awake');
