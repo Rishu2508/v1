@@ -91,7 +91,9 @@
 	var scrollWindow = () =>{
 		var i = 0;
 		$(window).scroll(function(){
-			var $w=$(this), st=$w.scrollTop(), navbar=$('.ftco_navbar'),nav_brand=$('.navbar-brand span'), sd=$('.js-scroll-wrap');
+			var st=$(this).scrollTop(),
+			navbar=$('.ftco_navbar'),nav_brand=$('.navbar-brand span'),
+			sd=$('.js-scroll-wrap');
 			if(st>150){
 				if(!navbar.hasClass('scrolled')){
 					navbar.addClass('scrolled');
@@ -115,7 +117,7 @@
 					sd.addClass('sleep');
 				}
 			}
-			if(st< $('.ftco-about').offset().top - 100){
+			if(st < $('.ftco-about').offset().top - 100){
 				if(navbar.hasClass('awake')){
 					$('.js-top').removeClass('active');
 					navbar.removeClass('awake');
@@ -124,12 +126,17 @@
 					sd.removeClass('sleep');
 				}
 			}
+			if((st > $('.pages').offset().top - ($(window).height()/2)) && (st < $('.pages').offset().top + $('.pages').height() - ($(window).height()))) {
+				$('.go-through').addClass('active');
+				$('.gototop').addClass('cascade');
+			} else {
+				$('.go-through').removeClass('active');
+				$('.gototop').removeClass('cascade');				
+			}
 			if(st >= $('.ftco-hireme').offset().top - $(window).height() && i==0 ) {
-				console.log('here > '+st)
 				i++;
 				startTyping();
-			}
-			
+			}			
 		});
 	};
 
@@ -204,7 +211,6 @@
 
 	TxtRotate.prototype.tick=function(){
 		var i=this.loopNum%this.toRotate.length;
-		// console.log('tick() has loopNum = '+this.loopNum);
 		var fullTxt=this.toRotate[i];
 
 		if(this.isDeleting){
@@ -251,11 +257,11 @@
 (function($){
 	var sections=[];
 	var id=false;
-	var $navbara=$('#navi a');
+	var $navbara=$('#navigation a');
 	$navbara.click(function(e){
 		e.preventDefault();
 		$('html, body').animate({
-			scrollTop:$($(this).attr('href')).offset().top-180},500);
+			scrollTop:$($(this).attr('href')).offset().top-80},200);
 		hash($(this).attr('href'));
 	});
 
@@ -272,11 +278,13 @@
 		}
 		if(scrolled_id!==id){
 			id=scrolled_id;
-			$($navbara).removeClass('current');
-			$('#navi a[href="#'+id+'"]').addClass('current');
+			$('#navigation ul li').removeClass('active');
+			$('#navigation ul li a[href=\'#'+id+'\']').parent().addClass('active');
 		}
 	})
 })(jQuery);
+
+
 
 hash=function(h){
 	if(history.pushState){
